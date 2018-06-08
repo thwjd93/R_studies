@@ -1,0 +1,11 @@
+score <- c(80, 90, 70, 65, 55, 30, 60, 90, 88, 100, 76, 30, 55, 61, 89, 68, 78, 70, 88, 82)
+sumScore <- sum(score)
+avgScore <- mean(score)
+midScore <- median(score)
+stdNum <- length(score)
+maxScore <- max(score)
+minScore <- min(score)
+
+cat("총점 = ",sumScore, "학생 수 = ",stdNum, "\n")
+cat("평균 점수 = ", avgScore, "중앙값 = ", midScore, "\n")
+cat("최고 점수 = ", maxScore, "최저 점수 = ", minScore, "\n")
