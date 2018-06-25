@@ -27,6 +27,16 @@ for(i in 1:dataNum) {
   }                           # 첫번째 반복에서 그래프 전체를 그리고 다음부터는 라인
 }                             # plot에서 x,y축을 'axes = FALSE'로 지우고
                               # 아래 'axis' 함수로 다시 그려주기
-axis(1, at = 1:dataNum, labels = 1:dataNum, las = 1)  # las : 숫자가 세로(1), 가로(2)
+axis(1, at = 1:dataNum, labels = c("1반", "2반", "3반", "4반"), las = 1)  # las : 숫자가 세로(1), 가로(2)
 axis(2, las = 1)
 legend("topright", dataNickname, fill = c(1:dataNum), bty ="o") 
+
+
+# 반복문에 if를 쓰지 않고 간단히 하는 법
+# for 함수 안에 plot을 그리는 순서에서 아래와 같이 par함수 사용
+plot(avgClass, ylab = "meanavg", xlab = "index", ylim = c(70,120), 
+     type = "o", lty = 1, lwd = 1, pch = 1, col = i, axes = FALSE)
+axis(1, at = 1:dataNum, labels = c("1반", "2반", "3반", "4반"), las = 1) 
+axis(2, las = 1)
+
+par(new = TRUE)    # 기존 그래프 화면에 새로운 꺾은 선을 추가
